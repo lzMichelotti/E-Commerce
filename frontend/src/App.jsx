@@ -8,25 +8,33 @@ import Product from './pages/Product'
 import Cart from './pages/Cart'
 import Login from './pages/Login'
 import PlaceOrder from './pages/PlaceOrder'
+import Privacy from './pages/Privacy'
 import Orders from './pages/Orders'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import SearchBar from './components/SearchBar'
+import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'> 
+      <ToastContainer />
       <Navbar />
+      <SearchBar />
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/colecao' element={<Collection/>} />
         <Route path='/sobre' element={<About/>} />
         <Route path='/contato' element={<Contact/>} />
-        <Route path='/produto/:produtoId' element={<Product/>} />
+        <Route path='/product/:productId' element={<Product/>} />
         <Route path='/carrinho' element={<Cart/>} />
         <Route path='/login' element={<Login/>} />
-        <Route path='/fazer-pedido' element={<PlaceOrder/>} />
-        <Route path='/pedidos' element={<Orders/>} />
+        <Route path='/pagamento' element={<PlaceOrder/>} />
+        <Route path='/orders' element={<Orders/>} />
+        <Route path='/politica' element={<Privacy/>} />
 
       </Routes>
+      <Footer/>
     </div>
   )
 }
